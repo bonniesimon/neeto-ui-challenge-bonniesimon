@@ -61,7 +61,9 @@ const Sidebar = () => {
         email: user.email,
         bottomLinks,
       }}
-      onCollapse={() => setIsSidebarCollapsed(prev => !prev)}
+      onCollapse={() =>
+        setIsSidebarCollapsed(isSidebarCollapsed => !isSidebarCollapsed)
+      }
     />
   );
 };
