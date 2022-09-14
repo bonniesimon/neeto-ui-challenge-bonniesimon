@@ -1,13 +1,15 @@
 import React from "react";
 
 import { MenuVertical, Clock } from "neetoicons";
-import { Typography, Button, Avatar, Dropdown } from "neetoui";
+import { Typography, Button, Avatar, Dropdown, Tooltip } from "neetoui";
 
-const Note = ({ title, description }) => {
+import { calculateCreatedAgo, dateToDayTimeFormat } from "utils/dateTime";
+
+const Note = ({ createdAt, title, description }) => {
   const dropDownMenuOptions = ["Edit", "Delete"];
 
   return (
-    <div className="mb-4 w-full rounded-lg border bg-white p-4 text-center shadow-md dark:border-gray-700 dark:bg-gray-800 sm:p-8">
+    <div className="mb-4 w-full rounded-sm border bg-white p-4 text-center shadow-md dark:border-gray-700 dark:bg-gray-800">
       <div className="flex items-center justify-between">
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           <Typography>{title}</Typography>
@@ -26,9 +28,11 @@ const Note = ({ title, description }) => {
         <Button label="Getting Started" size="small" style="secondary" />
         <div className="flex items-center justify-between">
           <Clock className="mx-1" />
-          <Typography className="mx-1" style="body3">
-            Created 2 hours ago
-          </Typography>
+          <Tooltip content={dateToDayTimeFormat(createdAt)} position="bottom">
+            <Typography className="mx-1" style="body3">
+              Created {calculateCreatedAgo(createdAt)}
+            </Typography>
+          </Tooltip>
           <Avatar
             className="mx-1"
             size="small"
