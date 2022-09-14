@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Search, Settings, Plus } from "neetoicons";
 import { Typography } from "neetoui";
-import { MenuBar } from "neetoui/layouts";
+import { MenuBar as NeetoUIMenuBar } from "neetoui/layouts";
 
 import {
   NOTES_MENUBAR_SEGMENTS,
@@ -10,21 +10,23 @@ import {
   NOTES_MENUBAR_OPTIONS,
 } from "./constants";
 
+// TODO: Rename to Menu since the default
+// exported function and filename should have same name
 const Menu = ({ showMenu }) => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
   return (
     <div className="flex">
-      <MenuBar showMenu={showMenu} title="Notes">
+      <NeetoUIMenuBar showMenu={showMenu} title="Notes">
         {NOTES_MENUBAR_OPTIONS.map(option => (
-          <MenuBar.Block
+          <NeetoUIMenuBar.Block
             active={option.active}
             count={option.count}
             key={option.title}
             label={option.title}
           />
         ))}
-        <MenuBar.SubTitle
+        <NeetoUIMenuBar.SubTitle
           iconProps={[
             {
               icon: Search,
@@ -41,19 +43,19 @@ const Menu = ({ showMenu }) => {
           >
             Segments
           </Typography>
-        </MenuBar.SubTitle>
-        <MenuBar.Search
+        </NeetoUIMenuBar.SubTitle>
+        <NeetoUIMenuBar.Search
           collapse={isSearchCollapsed}
           onCollapse={() => setIsSearchCollapsed(true)}
         />
         {NOTES_MENUBAR_SEGMENTS.map(segment => (
-          <MenuBar.Block
+          <NeetoUIMenuBar.Block
             count={segment.count}
             key={segment.title}
             label={segment.title}
           />
         ))}
-        <MenuBar.SubTitle
+        <NeetoUIMenuBar.SubTitle
           iconProps={[
             {
               icon: Settings,
@@ -74,11 +76,15 @@ const Menu = ({ showMenu }) => {
           >
             Tags
           </Typography>
-        </MenuBar.SubTitle>
+        </NeetoUIMenuBar.SubTitle>
         {NOTES_MENUBAR_TAGS.map(tag => (
-          <MenuBar.Block count={tag.count} key={tag.title} label={tag.title} />
+          <NeetoUIMenuBar.Block
+            count={tag.count}
+            key={tag.title}
+            label={tag.title}
+          />
         ))}
-      </MenuBar>
+      </NeetoUIMenuBar>
     </div>
   );
 };
