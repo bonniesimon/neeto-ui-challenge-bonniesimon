@@ -4,12 +4,14 @@ import { Search, Settings, Plus } from "neetoicons";
 import { Typography } from "neetoui";
 import { MenuBar } from "neetoui/layouts";
 
+import { NOTES_MENUBAR_SEGMENTS, NOTES_MENUBAR_TAGS } from "./constants";
+
 const Menu = ({ showMenu }) => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
   return (
     <div className="flex">
-      <MenuBar showMenu={showMenu} title="Contacts">
+      <MenuBar showMenu={showMenu} title="Notes">
         <MenuBar.Block active count={13} label="All" />
         <MenuBar.Block count={2} label="Users" />
         <MenuBar.Block count={7} label="Leads" />
@@ -35,10 +37,13 @@ const Menu = ({ showMenu }) => {
           collapse={isSearchCollapsed}
           onCollapse={() => setIsSearchCollapsed(true)}
         />
-        <MenuBar.Block count={80} label="Europe" />
-        <MenuBar.Block count={60} label="Middle-East" />
-        <MenuBar.Block count={60} label="Asia" />
-        <MenuBar.AddNew label="Add New Segments" />
+        {NOTES_MENUBAR_SEGMENTS.map(segment => (
+          <MenuBar.Block
+            count={segment.count}
+            key={segment.title}
+            label={segment.title}
+          />
+        ))}
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -61,23 +66,9 @@ const Menu = ({ showMenu }) => {
             Tags
           </Typography>
         </MenuBar.SubTitle>
-        <MenuBar.Block count={80} label="Europe" />
-        <MenuBar.Block count={60} label="Middle-East" />
-        <MenuBar.Block count={60} label="Asia" />
-        <MenuBar.AddNew label="Add New Tag" />
-        <MenuBar.Item
-          description="Welcome Message, KB and Labels "
-          label="General"
-        />
-        <MenuBar.Item
-          active
-          description="Brand Color, Logo and Widget Position"
-          label="Styling"
-        />
-        <MenuBar.Item
-          description="Position, Icon and Label"
-          label="Widget Icon"
-        />
+        {NOTES_MENUBAR_TAGS.map(tag => (
+          <MenuBar.Block count={tag.count} key={tag.title} label={tag.title} />
+        ))}
       </MenuBar>
     </div>
   );

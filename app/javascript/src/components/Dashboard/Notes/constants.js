@@ -24,3 +24,33 @@ export const NOTES_TABLE_COLUMN_DATA = [
     width: "70%",
   },
 ];
+
+export const NOTES_MENUBAR_SEGMENTS = [
+  {
+    title: "Europe",
+    count: 80,
+  },
+  {
+    title: "Middle-East",
+    count: 60,
+  },
+  {
+    title: "Asia",
+    count: 60,
+  },
+];
+
+export const NOTES_MENUBAR_TAGS = [
+  {
+    title: "Sales",
+    count: 80,
+  },
+  {
+    title: "Finance",
+    count: 60,
+  },
+  {
+    title: "User Experience",
+    count: 60,
+  },
+];
