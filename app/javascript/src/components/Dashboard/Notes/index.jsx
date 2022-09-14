@@ -10,8 +10,8 @@ import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
 import Menu from "./MenuBar";
+import Note from "./Note";
 import NewNotePane from "./Pane/Create";
-import Table from "./Table";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -73,11 +73,14 @@ const Notes = () => {
                 />
               }
             />
-            <Table
-              fetchNotes={fetchNotes}
-              notes={notes}
-              setSelectedNoteIds={setSelectedNoteIds}
-            />
+            {notes.map(note => (
+              <Note
+                createdAt={note.created_at}
+                description={note.description}
+                key={note.id}
+                title={note.title}
+              />
+            ))}
           </>
         ) : (
           <EmptyState
