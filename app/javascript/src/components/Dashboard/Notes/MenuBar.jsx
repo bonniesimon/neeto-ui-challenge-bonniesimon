@@ -12,12 +12,12 @@ import {
 
 // TODO: Rename to Menu since the default
 // exported function and filename should have same name
-const Menu = ({ showMenu }) => {
+const MenuBar = ({ showMenuBar }) => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
   return (
     <div className="flex">
-      <NeetoUIMenuBar showMenu={showMenu} title="Notes">
+      <NeetoUIMenuBar showMenu={showMenuBar} title="Notes">
         {NOTES_MENUBAR_OPTIONS.map(option => (
           <NeetoUIMenuBar.Block
             active={option.active}
@@ -89,4 +89,4 @@ const Menu = ({ showMenu }) => {
   );
 };
 
-export default Menu;
+export default MenuBar;

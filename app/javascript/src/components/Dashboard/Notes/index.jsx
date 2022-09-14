@@ -8,7 +8,7 @@ import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
-import Menu from "./MenuBar";
+import MenuBar from "./MenuBar";
 import Note from "./Note";
 import NewNotePane from "./Pane/Create";
 
@@ -43,7 +43,7 @@ const Notes = () => {
 
   return (
     <>
-      <Menu showMenu={showMenuBar} />
+      <MenuBar showMenuBar={showMenuBar} />
       <Container>
         <Header
           menuBarToggle={() => setShowMenuBar(showMenuBar => !showMenuBar)}
