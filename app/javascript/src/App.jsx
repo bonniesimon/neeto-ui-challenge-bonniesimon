@@ -1,6 +1,6 @@
 import React from "react";
 
-// eslint-disable-next-line no-unused-vars, unused-imports/no-unused-imports
+import dayjs from "libs/day"; // eslint-disable-line
 
 import { AuthProvider } from "contexts/auth";
 import { UserProvider } from "contexts/user";

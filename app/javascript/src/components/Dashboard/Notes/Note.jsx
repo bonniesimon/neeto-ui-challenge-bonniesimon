@@ -9,7 +9,7 @@ const Note = ({ createdAt, title, description }) => {
   const dropDownMenuOptions = ["Edit", "Delete"];
 
   return (
-    <div className="mb-4 w-full rounded-md border bg-white p-4 text-center shadow-md dark:border-gray-700 dark:bg-gray-800">
+    <div className="mb-4 w-full rounded-sm border bg-white p-4 text-center shadow-md dark:border-gray-700 dark:bg-gray-800">
       <div className="flex items-center justify-between">
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
           <Typography>{title}</Typography>
