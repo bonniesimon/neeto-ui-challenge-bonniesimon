@@ -66,7 +66,10 @@ const Notes = () => {
               <Note
                 createdAt={note.created_at}
                 description={note.description}
+                id={note.id}
                 key={note.id}
+                setSelectedNoteIds={setSelectedNoteIds}
+                setShowDeleteAlert={setShowDeleteAlert}
                 title={note.title}
               />
             ))}
