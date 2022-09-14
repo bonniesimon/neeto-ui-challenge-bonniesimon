@@ -57,7 +57,7 @@ const Sidebar = () => {
       }}
       profileInfo={{
         name: `${user.first_name} ${user.last_name}`,
-        imageUrl: user.profile_image_path,
+        imageUrl: "https://randomuser.me/api/portraits/women/90.jpg",
         email: user.email,
         bottomLinks,
       }}
