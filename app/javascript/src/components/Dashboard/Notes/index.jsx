@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Delete } from "neetoicons";
 import { Button, PageLoader } from "neetoui";
-import { Container, Header, SubHeader } from "neetoui/layouts";
+import { Container, Header } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
@@ -63,16 +62,6 @@ const Notes = () => {
         />
         {notes.length ? (
           <>
-            <SubHeader
-              rightActionBlock={
-                <Button
-                  disabled={!selectedNoteIds.length}
-                  icon={Delete}
-                  label="Delete"
-                  onClick={() => setShowDeleteAlert(true)}
-                />
-              }
-            />
             {notes.map(note => (
               <Note
                 createdAt={note.created_at}
