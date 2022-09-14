@@ -10,8 +10,6 @@ import {
   NOTES_MENUBAR_OPTIONS,
 } from "./constants";
 
-// TODO: Rename to Menu since the default
-// exported function and filename should have same name
 const MenuBar = ({ showMenuBar }) => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
