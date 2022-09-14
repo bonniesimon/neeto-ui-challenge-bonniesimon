@@ -8,7 +8,7 @@ import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
-import Menu from "./MenuBar";
+import MenuBar from "./MenuBar";
 import Note from "./Note";
 import NewNotePane from "./Pane/Create";
 
@@ -43,10 +43,10 @@ const Notes = () => {
 
   return (
     <>
-      <Menu showMenu={showMenuBar} />
+      <MenuBar showMenuBar={showMenuBar} />
       <Container>
         <Header
-          menuBarToggle={() => setShowMenuBar(prev => !prev)}
+          menuBarToggle={() => setShowMenuBar(showMenuBar => !showMenuBar)}
           title="Notes"
           actionBlock={
             <Button
@@ -66,7 +66,10 @@ const Notes = () => {
               <Note
                 createdAt={note.created_at}
                 description={note.description}
+                id={note.id}
                 key={note.id}
+                setSelectedNoteIds={setSelectedNoteIds}
+                setShowDeleteAlert={setShowDeleteAlert}
                 title={note.title}
               />
             ))}

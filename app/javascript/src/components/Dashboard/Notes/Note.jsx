@@ -4,8 +4,18 @@ import { MenuVertical, Clock } from "neetoicons";
 import { Typography, Button, Avatar, Dropdown, Tooltip } from "neetoui";
 import { calculateCreatedAgo, dateToDayTimeFormat } from "utils";
 
-const Note = ({ createdAt, title, description }) => {
-  const dropDownMenuOptions = ["Edit", "Delete"];
+const Note = ({
+  id,
+  createdAt,
+  title,
+  description,
+  setShowDeleteAlert,
+  setSelectedNoteIds,
+}) => {
+  const handleDelete = () => {
+    setSelectedNoteIds([id]);
+    setShowDeleteAlert(true);
+  };
 
   return (
     <div className="mb-4 w-full rounded-sm border bg-white p-4 text-center shadow-md dark:border-gray-700 dark:bg-gray-800">
@@ -14,9 +24,7 @@ const Note = ({ createdAt, title, description }) => {
           <Typography>{title}</Typography>
         </h5>
         <Dropdown buttonStyle="text" icon={MenuVertical}>
-          {dropDownMenuOptions.map((option, idx) => (
-            <li key={idx}>{option}</li>
-          ))}
+          <li onClick={handleDelete}>Delete</li>
         </Dropdown>
       </div>
       <div className="mb-4 flex text-left">
