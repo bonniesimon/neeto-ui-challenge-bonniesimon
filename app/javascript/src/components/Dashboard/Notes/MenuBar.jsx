@@ -28,7 +28,8 @@ const Menu = ({ showMenu }) => {
           iconProps={[
             {
               icon: Search,
-              onClick: () => setIsSearchCollapsed(!isSearchCollapsed),
+              onClick: () =>
+                setIsSearchCollapsed(isSearchCollapsed => !isSearchCollapsed),
             },
           ]}
         >
