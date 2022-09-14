@@ -25,6 +25,29 @@ export const NOTES_TABLE_COLUMN_DATA = [
   },
 ];
 
+export const NOTES_MENUBAR_OPTIONS = [
+  {
+    title: "All",
+    count: 200,
+    active: true,
+  },
+  {
+    title: "Users",
+    count: 80,
+    active: false,
+  },
+  {
+    title: "Leads",
+    count: 60,
+    active: false,
+  },
+  {
+    title: "Visitors",
+    count: 60,
+    active: false,
+  },
+];
+
 export const NOTES_MENUBAR_SEGMENTS = [
   {
     title: "Europe",
