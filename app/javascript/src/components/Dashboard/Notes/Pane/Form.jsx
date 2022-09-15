@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
 import { Check } from "neetoicons";
-import { Button, Pane, Select } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
+import { Button, Pane } from "neetoui";
+import { Input, Textarea, Select } from "neetoui/formik";
 
 import notesApi from "apis/notes";
 
@@ -62,7 +62,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               required
               className="w-full flex-grow-0"
               label="Assigned Contact"
-              name="assigned_contact"
+              name="assignedContact"
               options={FORM_CONTACT_OPTIONS}
               placeholder="Select contact"
             />
