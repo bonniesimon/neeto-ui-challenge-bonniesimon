@@ -15,7 +15,7 @@ const MenuBar = ({ showMenuBar }) => {
 
   return (
     <div className="flex">
-      <NeetoUIMenuBar showMenu={showMenuBar} title="Notes">
+      <NeetoUIMenuBar showMenu={showMenuBar} title="Contacts">
         {CONTACTS_MENUBAR_OPTIONS.map(option => (
           <NeetoUIMenuBar.Block
             active={option.active}
