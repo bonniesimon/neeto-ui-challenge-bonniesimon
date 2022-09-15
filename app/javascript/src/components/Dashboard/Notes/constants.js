@@ -55,8 +55,12 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
   assignedContact: yup
     .object()
     .shape({
-      label: yup.string(),
-      value: yup.string(),
+      label: yup
+        .string()
+        .oneOf(FORM_CONTACT_OPTIONS.map(contact => contact.label)),
+      value: yup
+        .string()
+        .oneOf(FORM_CONTACT_OPTIONS.map(contact => contact.value)),
     })
     .nullable()
     .required("Contact should be assigned"),
@@ -64,8 +68,8 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .array()
     .of(
       yup.object().shape({
-        label: yup.string(),
-        value: yup.number(),
+        label: yup.string().oneOf(FORM_TAG_OPTIONS.map(tag => tag.label)),
+        value: yup.number().oneOf(FORM_TAG_OPTIONS.map(tag => tag.value)),
       })
     )
     .min(1, "At least 1 Tag is required")
