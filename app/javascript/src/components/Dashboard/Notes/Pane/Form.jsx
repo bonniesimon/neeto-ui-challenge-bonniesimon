@@ -75,7 +75,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               label="Tags"
               name="tags"
               options={FORM_TAG_OPTIONS}
-              placeholder="Select tag"
+              placeholder="Select tags"
             />
           </Pane.Body>
           <Pane.Footer>
