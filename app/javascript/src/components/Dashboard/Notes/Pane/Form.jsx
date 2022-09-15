@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui";
+import { Check } from "neetoicons";
+import { Button, Pane, Select } from "neetoui";
 import { Input, Textarea } from "neetoui/formik";
 
 import notesApi from "apis/notes";
 
-import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
+import {
+  NOTES_FORM_VALIDATION_SCHEMA,
+  FORM_CONTACT_OPTIONS,
+  FORM_TAG_OPTIONS,
+} from "../constants";
 
 const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -41,19 +46,44 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               className="w-full flex-grow-0"
               label="Title"
               name="title"
+              placeholder="Enter title"
             />
             <Textarea
               required
               className="w-full flex-grow-0"
               label="Description"
               name="description"
-              rows={8}
+              placeholder="Enter note description"
+              rows={2}
+            />
+            <Select
+              isClearable
+              isSearchable
+              required
+              className="w-full flex-grow-0"
+              label="Assigned Contact"
+              name="assigned_contact"
+              options={FORM_CONTACT_OPTIONS}
+              placeholder="Select contact"
+            />
+            <Select
+              isClearable
+              isMulti
+              isSearchable
+              required
+              className="w-full flex-grow-0"
+              label="Tags"
+              name="tags"
+              options={FORM_TAG_OPTIONS}
+              placeholder="Select tag"
             />
           </Pane.Body>
           <Pane.Footer>
             <Button
               className="mr-3"
               disabled={isSubmitting}
+              icon={Check}
+              iconPosition="right"
               label={isEdit ? "Update" : "Save Changes"}
               loading={isSubmitting}
               size="large"
