@@ -35,3 +35,34 @@ export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
 });
+
+export const CONTACTS = [
+  {
+    name: "Ronald Richards",
+    role: "Owner",
+    email: "ronald@example.com",
+    createdAt: "Feb, 5, 2021",
+    profilePic: "https://randomuser.me/api/portraits/men/34.jpg",
+  },
+  {
+    name: "Jacob Jones",
+    role: "Owner",
+    email: "jacobjones@example.com",
+    createdAt: "Feb, 5, 2021",
+    profilePic: "https://randomuser.me/api/portraits/men/45.jpg",
+  },
+  {
+    name: "Ronald Richards",
+    role: "Owner",
+    email: "ronald@example.com",
+    createdAt: "Feb, 5, 2021",
+    profilePic: "https://randomuser.me/api/portraits/men/34.jpg",
+  },
+  {
+    name: "Jacob Jones",
+    role: "Owner",
+    email: "jacobjones@example.com",
+    createdAt: "Feb, 5, 2021",
+    profilePic: "https://randomuser.me/api/portraits/men/45.jpg",
+  },
+];
