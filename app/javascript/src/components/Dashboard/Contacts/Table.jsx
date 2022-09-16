@@ -1,19 +1,18 @@
 import React from "react";
 
-import { Table as NeetoUITable, Pagination } from "neetoui";
+import { Table as NeetoUITable } from "neetoui";
 
-import TableColumnBuilder from "./TableColumnBuilder";
+import { tableColumnBuilder } from "./utils";
 
-const Table = ({ contacts = [] }) => (
+const Table = ({ contacts = [], setShowDeleteAlert }) => (
   <div className="notes-table-height w-full">
     <NeetoUITable
       allowRowClick
-      columnData={TableColumnBuilder}
+      columnData={tableColumnBuilder(setShowDeleteAlert)}
+      currentPageNumber={1}
+      defaultPageSize={2}
       rowData={contacts}
     />
-    <div className="mt-3 flex w-full justify-end">
-      <Pagination count={1000} pageNo={3} pageSize={100} />
-    </div>
   </div>
 );
 

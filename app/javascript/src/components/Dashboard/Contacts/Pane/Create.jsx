@@ -13,7 +13,7 @@ const Create = ({ fetchNotes, showPane, setShowPane }) => {
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Add New Note
+          Add New Contact
         </Typography>
       </Pane.Header>
       <Form

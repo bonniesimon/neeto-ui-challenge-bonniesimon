@@ -19,7 +19,7 @@ const Notes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState([]);
-  const [showMenuBar, setShowMenuBar] = useState(true);
+  const [showMenuBar, setShowMenuBar] = useState(false);
 
   useEffect(() => {
     fetchNotes();
