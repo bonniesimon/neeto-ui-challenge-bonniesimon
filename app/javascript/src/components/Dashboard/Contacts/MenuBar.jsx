@@ -18,7 +18,7 @@ const MenuBar = ({ showMenuBar }) => {
       <NeetoUIMenuBar showMenu={showMenuBar} title="Contacts">
         {CONTACTS_MENUBAR_OPTIONS.map(option => (
           <NeetoUIMenuBar.Block
-            active={option.active}
+            active={option.isActive}
             count={option.count}
             key={option.title}
             label={option.title}

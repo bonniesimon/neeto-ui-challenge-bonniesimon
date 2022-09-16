@@ -5,20 +5,13 @@ import { Check } from "neetoicons";
 import { Button, Pane } from "neetoui";
 import { Input, Textarea } from "neetoui/formik";
 
-import notesApi from "apis/notes";
-
 import { CONTACTS_FORM_VALIDATION_SCHEMA } from "../constants";
 
 const Form = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async values => {
+  const handleSubmit = async () => {
     try {
-      if (isEdit) {
-        await notesApi.update(note.id, values);
-      } else {
-        await notesApi.create(values);
-      }
       refetch();
       onClose();
     } catch (err) {

@@ -11,20 +11,20 @@ const TableColumnBuilder = [
     dataIndex: "name",
     key: "name",
     width: 40,
-    render: (name, rows) => (
+    render: (name, row) => (
       <div className="flex flex-row items-center p-2">
         <Avatar
           size="medium"
           user={{
             name,
-            imageUrl: rows.profilePic,
+            imageUrl: row.profilePic,
           }}
           onClick={() => {}}
         />
         <div className="mx-2 flex flex-col">
           <Typography style="h5">{name}</Typography>
           <Typography style="body3" weight="light">
-            {rows.role}
+            {row.role}
           </Typography>
         </div>
       </div>
