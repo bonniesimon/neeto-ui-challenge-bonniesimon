@@ -10,42 +10,42 @@ export const NOTES_FORM_INITIAL_FORM_VALUES = {
 export const FORM_CONTACT_OPTIONS = [
   {
     label: "Ronald Richards",
-    value: "ronald_richards",
+    value: "ronald-richards",
   },
   {
     label: "Oliver Smith",
-    value: "Oliver Smith",
+    value: "oliver-smith",
   },
   {
     label: "Jacob Jones",
-    value: "jacob_jones",
+    value: "jacob-jones",
   },
 ];
 
 export const FORM_TAG_OPTIONS = [
   {
     label: "Getting Started",
-    value: 1,
+    value: "getting-started",
   },
   {
     label: "Onboarding",
-    value: 2,
+    value: "onboarding",
   },
   {
     label: "User Flow",
-    value: 3,
+    value: "user-flow",
   },
   {
     label: "UX",
-    value: 4,
+    value: "ux",
   },
   {
     label: "Bugs",
-    value: 5,
+    value: "bugs",
   },
   {
     label: "V2",
-    value: 6,
+    value: "v2",
   },
 ];
 
