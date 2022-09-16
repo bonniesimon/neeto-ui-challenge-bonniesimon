@@ -5,7 +5,7 @@ import { Typography, Avatar, Dropdown } from "neetoui";
 
 import { dateTimeToMonthDayYearFormat } from "./utils";
 
-const TableColumnBuilder = handleDelete => [
+const TableColumnBuilder = setShowDeleteAlert => [
   {
     title: "Name & Role",
     dataIndex: "name",
@@ -59,7 +59,7 @@ const TableColumnBuilder = handleDelete => [
     width: 10,
     render: () => (
       <Dropdown buttonStyle="text" icon={MenuHorizontal}>
-        <li onClick={handleDelete}>Delete</li>
+        <li onClick={() => setShowDeleteAlert(true)}>Delete</li>
       </Dropdown>
     ),
   },
