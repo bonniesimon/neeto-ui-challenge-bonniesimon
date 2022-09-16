@@ -12,7 +12,7 @@ import Table from "./Table";
 
 const Contacts = () => {
   const [contacts, setContacts] = useState([]);
-  const [showMenuBar, setShowMenuBar] = useState(true); // eslint-disable-line
+  const [showMenuBar, setShowMenuBar] = useState(true);
   const [showNewContactPane, setShowNewContactPane] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
