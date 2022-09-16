@@ -2,7 +2,8 @@ import React from "react";
 
 import { MenuVertical, Clock } from "neetoicons";
 import { Typography, Button, Avatar, Dropdown, Tooltip } from "neetoui";
-import { calculateCreatedAgo, dateToDayTimeFormat } from "utils";
+
+import { calculateCreatedAgo, dateToDayTimeFormat } from "./utils";
 
 const Note = ({
   id,
