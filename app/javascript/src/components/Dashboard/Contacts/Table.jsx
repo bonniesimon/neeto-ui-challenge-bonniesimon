@@ -2,13 +2,13 @@ import React from "react";
 
 import { Table as NeetoUITable } from "neetoui";
 
-import TableColumnBuilder from "./TableColumnBuilder";
+import { tableColumnBuilder } from "./utils";
 
 const Table = ({ contacts = [], setShowDeleteAlert }) => (
   <div className="notes-table-height w-full">
     <NeetoUITable
       allowRowClick
-      columnData={TableColumnBuilder(setShowDeleteAlert)}
+      columnData={tableColumnBuilder(setShowDeleteAlert)}
       currentPageNumber={1}
       defaultPageSize={2}
       rowData={contacts}

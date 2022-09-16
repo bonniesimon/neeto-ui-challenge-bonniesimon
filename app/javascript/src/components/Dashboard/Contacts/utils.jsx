@@ -1,11 +1,13 @@
 import React from "react";
 
+import dayjs from "dayjs";
 import { MenuHorizontal } from "neetoicons";
 import { Typography, Avatar, Dropdown } from "neetoui";
 
-import { dateTimeToMonthDayYearFormat } from "./utils";
+export const dateTimeToMonthDayYearFormat = dateTime =>
+  dayjs(dateTime).format("MMM, D, YYYY");
 
-const TableColumnBuilder = setShowDeleteAlert => [
+export const tableColumnBuilder = setShowDeleteAlert => [
   {
     title: "Name & Role",
     dataIndex: "name",
@@ -64,5 +66,3 @@ const TableColumnBuilder = setShowDeleteAlert => [
     ),
   },
 ];
-
-export default TableColumnBuilder;

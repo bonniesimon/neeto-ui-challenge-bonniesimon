@@ -13,7 +13,7 @@ import Table from "./Table";
 
 const Contacts = () => {
   const [contacts, setContacts] = useState([]);
-  const [showMenuBar, setShowMenuBar] = useState(true);
+  const [showMenuBar, setShowMenuBar] = useState(false);
   const [showNewContactPane, setShowNewContactPane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
