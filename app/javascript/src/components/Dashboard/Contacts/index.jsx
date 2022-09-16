@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import EmptyNotesListImage from "images/EmptyNotesList";
 import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
@@ -49,7 +50,7 @@ const Contacts = () => {
           <Table contacts={contacts} setShowDeleteAlert={setShowDeleteAlert} />
         ) : (
           <EmptyState
-            image={() => null}
+            image={EmptyNotesListImage}
             primaryAction={() => setShowNewContactPane(true)}
             primaryActionLabel="Add Contact"
             subtitle="Add your contacts"
