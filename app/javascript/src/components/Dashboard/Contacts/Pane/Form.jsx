@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import { Formik, Form as NeetoUIForm } from "formik";
 import { Check } from "neetoicons";
-import { Button, Pane } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
+import { Button, Pane, Toastr } from "neetoui";
+import { Input, Select } from "neetoui/formik";
 
-import { CONTACTS_FORM_VALIDATION_SCHEMA } from "../constants";
+import { CONTACTS_FORM_VALIDATION_SCHEMA, CONTACTS_ROLES } from "../constants";
 
 const Form = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -14,6 +14,7 @@ const Form = ({ onClose, refetch, note, isEdit }) => {
     try {
       refetch();
       onClose();
+      Toastr.success("Contact added successfully");
     } catch (err) {
       logger.error(err);
     }
@@ -30,20 +31,34 @@ const Form = ({ onClose, refetch, note, isEdit }) => {
       {({ isSubmitting }) => (
         <NeetoUIForm className="w-full">
           <Pane.Body className="space-y-6">
+            <div className="flex w-full justify-between space-x-2">
+              <Input
+                className="w-full flex-grow-0"
+                label="First Name"
+                name="firstName"
+                placeholder="Enter first name"
+              />
+              <Input
+                className="w-full flex-grow-0"
+                label="Last Name"
+                name="lastName"
+                placeholder="Enter last name"
+              />
+            </div>
             <Input
-              required
               className="w-full flex-grow-0"
-              label="Title"
-              name="title"
-              placeholder="Enter title"
+              label="Email"
+              name="email"
+              placeholder="Enter your email address"
             />
-            <Textarea
-              required
+            <Select
+              isClearable
+              isSearchable
               className="w-full flex-grow-0"
-              label="Description"
-              name="description"
-              placeholder="Enter note description"
-              rows={2}
+              label="Roles"
+              name="roles"
+              options={CONTACTS_ROLES}
+              placeholder="Select Role"
             />
           </Pane.Body>
           <Pane.Footer>
