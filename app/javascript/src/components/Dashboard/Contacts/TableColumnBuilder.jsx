@@ -3,6 +3,8 @@ import React from "react";
 import { MenuHorizontal } from "neetoicons";
 import { Typography, Avatar } from "neetoui";
 
+import { dateTimeToMonthDayYearFormat } from "./utils";
+
 const TableColumnBuilder = [
   {
     title: "Name & Role",
@@ -20,8 +22,10 @@ const TableColumnBuilder = [
           onClick={() => {}}
         />
         <div className="mx-2 flex flex-col">
-          <Typography style="h4">{name}</Typography>
-          <Typography style="body2">{rows.role}</Typography>
+          <Typography style="h5">{name}</Typography>
+          <Typography style="body3" weight="light">
+            {rows.role}
+          </Typography>
         </div>
       </div>
     ),
@@ -30,13 +34,23 @@ const TableColumnBuilder = [
     title: "Email",
     dataIndex: "email",
     key: "email",
-    width: 30,
+    width: 25,
+    render: email => (
+      <Typography style="body3" weight="light">
+        {email}
+      </Typography>
+    ),
   },
   {
     title: "Created At",
     dataIndex: "createdAt",
     key: "createdAt",
-    width: 20,
+    width: 25,
+    render: createdAt => (
+      <Typography style="body3" weight="light">
+        {dateTimeToMonthDayYearFormat(createdAt)}
+      </Typography>
+    ),
   },
   {
     title: "",
