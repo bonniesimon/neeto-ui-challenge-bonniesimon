@@ -6,6 +6,7 @@ import { Container, Header } from "neetoui/layouts";
 import EmptyState from "components/Common/EmptyState";
 
 import { CONTACTS } from "./constants";
+import DeleteAlert from "./DeleteAlert";
 import MenuBar from "./MenuBar";
 import NewContactPane from "./Pane/Create";
 import Table from "./Table";
@@ -14,6 +15,7 @@ const Contacts = () => {
   const [contacts, setContacts] = useState([]);
   const [showMenuBar, setShowMenuBar] = useState(true);
   const [showNewContactPane, setShowNewContactPane] = useState(false);
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -44,7 +46,7 @@ const Contacts = () => {
           }}
         />
         {contacts.length ? (
-          <Table contacts={contacts} />
+          <Table contacts={contacts} setShowDeleteAlert={setShowDeleteAlert} />
         ) : (
           <EmptyState
             image={() => null}
@@ -59,6 +61,12 @@ const Contacts = () => {
           setShowPane={setShowNewContactPane}
           showPane={showNewContactPane}
         />
+        {showDeleteAlert && (
+          <DeleteAlert
+            refetch={fetchContacts}
+            onClose={() => setShowDeleteAlert(false)}
+          />
+        )}
       </Container>
     </>
   );

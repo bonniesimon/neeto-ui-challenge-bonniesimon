@@ -1,11 +1,11 @@
 import React from "react";
 
 import { MenuHorizontal } from "neetoicons";
-import { Typography, Avatar } from "neetoui";
+import { Typography, Avatar, Dropdown } from "neetoui";
 
 import { dateTimeToMonthDayYearFormat } from "./utils";
 
-const TableColumnBuilder = [
+const TableColumnBuilder = handleDelete => [
   {
     title: "Name & Role",
     dataIndex: "name",
@@ -57,7 +57,11 @@ const TableColumnBuilder = [
     dataIndex: "options",
     key: "options",
     width: 10,
-    render: () => <MenuHorizontal />,
+    render: () => (
+      <Dropdown buttonStyle="text" icon={MenuHorizontal}>
+        <li onClick={handleDelete}>Delete</li>
+      </Dropdown>
+    ),
   },
 ];
 
